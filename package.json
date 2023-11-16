@@ -1,14 +1,14 @@
 {
-  "name": "nextjs-ethereum-starter",
+  "name": "round-space",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "yarn workspace nextjs-ethereum-starter-frontend dev",
-    "build": "yarn workspace nextjs-ethereum-starter-frontend build",
-    "start": "yarn workspace nextjs-ethereum-starter-frontend start",
-    "chain": "yarn workspace nextjs-ethereum-starter-hardhat chain",
-    "deploy": "yarn workspace nextjs-ethereum-starter-hardhat deploy",
-    "compile": "yarn workspace nextjs-ethereum-starter-hardhat compile"
+    "dev": "yarn workspace round-space-frontend dev",
+    "build": "yarn workspace round-space-frontend build",
+    "start": "yarn workspace round-space-frontend start",
+    "chain": "yarn workspace round-space-hardhat chain",
+    "deploy": "yarn workspace round-space-hardhat deploy",
+    "compile": "yarn workspace round-space-hardhat compile"
   },
   "workspaces": {
     "packages": [
