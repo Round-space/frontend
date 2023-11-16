@@ -6,11 +6,14 @@ import {
   Heading,
   Stack,
   Box,
+  HStack,
   ButtonGroup,
+  List,
+  ListItem,
   IconButton,
   SimpleGrid,
+  Icon,
   LinkBox,
-  LinkOverlay,
   Spacer,
   Divider,
   Center,
@@ -20,7 +23,7 @@ import {
 
 
 import { FaTwitter, FaDiscord, FaEthereum, FaGithub } from 'react-icons/fa';
-
+import { FiCheck } from 'react-icons/fi';
 
 import React from 'react';
 import { WalletConnector } from '../components/ConnectButton/WalletConnector'
@@ -245,64 +248,26 @@ export default function LandingPage({ url }: any): JSX.Element {
         </Box>
       </Box>
 
-
-      {/* See it in Action */}
-      {/* <Box as="section" pb="20">
+       {/* See it in Action */}
+       <Box as="section" pb="20">
     <Box>
       <Box maxW={{ base: 'xl', md: '5xl' }} mx="auto" px={{ base: '6', md: '8' }}>
-        {sectionHeadings('See it in Action', 'Rounds can be used for community bounties, grants, hackathons, and more.', false)}
+        {sectionHeadings('Pricing', 'Try Round for free, or using a managed service.', false)}
       </Box>
     </Box>
     <Box>
       <Box maxW={{ base: 'xl', md: '8xl' }} mx="auto" px={{ base: '6', md: '8' }}>
-        <HStack overflowX="scroll" align="stretch" overflowY="hidden" spacing="5" py={3}>
-
-          {showcaseExample(
-            "/images/landing/examples/aikido-protocol.png",
-            "Aikido Grants & Bounties",
-            "Aikido Grants & Bounties",
-            "See how Aikido uses workspaces to manage protocol development with our community using bounties, grants, and hackathons.",
-            "Visit →",
-            "https://www.round.space/space/0x89D160D5AD0eAE27eBc115f70f43E91eeaB42EcA")}
-
-
-          {showcaseExample(
-            "/images/landing/examples/daoresearch.png",
-            "DAO Research Collective",
-            "DAO Research Collective",
-            "The DAO Research Collective (DRC) is a non-profit that accelerates DAO functionality by funding and facilitating DAO research.",
-            "Visit →",
-            "https://www.round.space/space/0x0CcCaa2b08555Ac2eFc05CFB66fAd16DC8EEfC38")}
-
-          {showcaseExample(
-            "/images/landing/examples/crowdaudits.png",
-            "Crowdaudits.xyz",
-            "Crowdaudits.xyz",
-            "Crowdsourced Audits for any contract - a marketplace built on Aikido.",
-            "Coming Soon",
-            "#")}
-
-          {showcaseExample(
-            "/images/landing/examples/splits.png",
-            "0xSplits",
-            "0xSplits",
-            "Bounties for 0xSplits, The standard for splitting onchain income",
-            "Visit →",
-            "https://www.round.space/space/0xsplits.eth")}
-
-
-          {showcaseExample(
-            "/images/landing/examples/metagame.png",
-            "The Metagame",
-            "The Metagame",
-            "You’re playing it right now. Infrastructure for aesthetically pleasing NFTs earned by your on-chain and off-chain activity.",
-            "Visit →",
-            "https://www.round.space/space/the-metagame.eth")}
-
-        </HStack>
+        <Center py={3} >
+        <SimpleGrid columns={{ base: 1, sm: 2 }} gap="8" width={{ base: 'auto', md: 'auto' }}>
+          {freeTier('Starter', 'Create a space and launch rounds. No fees.', 'Get Started', '/dashboard/' + account)}
+          {managedTier('Premium', 'We provide community management, support, and make payments easy. ', 'Get Started', '/dashboard/' + account)}
+          </SimpleGrid>
+        </Center>
       </Box>
     </Box>
-  </Box> */}
+  </Box> 
+
+
 
       {/* Support From */}
       <Box as="section" pb="20" px={{ base: '6', md: '8' }} >
@@ -330,131 +295,6 @@ export default function LandingPage({ url }: any): JSX.Element {
           </Box>
         </Box>
       </Box>
-
-      {/* Testimonial */}
-      {/* <Box as="section" color="gray.800">
-        <Box maxW={{ base: 'xl', md: '5xl' }} mx="auto" px={{ base: '6', md: '6' }}>
-            <Box
-              bg={useColorModeValue('gray.700', 'gray.700')} 
-              borderColor="gray.50" borderWidth={3} boxShadow="md"
-              rounded="3xl" 
-              maxW={{ base: 'xl', md: '5xl' }} 
-              p="6" 
-              mx="auto"
-              mb="20"
-              px={{ base: '6', md: '8' }}
-              >
-              <Box maxW={{ base: 'xl', md: '5xl' }} mx="auto" px={{ base: '6', md: '8' }}>
-            {sectionHeadings('Trusted by the community', 'Aikido is used by DAOs, protocols, research communities, open source projects and more.', true)}
-          </Box>
-
-          <Stack maxW={{ base: 'xl', md: '5xl' }} mx="auto" px={{ base: '6', md: '8' }} spacing="4">
-          <SimpleGrid gap={{ base: '1', md: '4' }} columns={{ base: 2, md: 5 }}>
-            {logos.map((logo, idx) => (
-              <Center key={idx}>
-                <Image alt={logo.title} width="100px" src={logo.url}></Image>
-              </Center>
-            ))}
-          </SimpleGrid>
-        </Stack>
-
-        <Box maxW="2xl" mx="auto" px={{ base: '6', md: '8' }} pt="12">
-          <Flex mt="0" direction="column" align="center" textAlign="center">
-            <QuoteIcon
-              color={useColorModeValue('gray.600', 'gray.600')}
-              fontSize={{ base: '3xl', md: '6xl' }}
-              mb="6"
-            />
-            <Text fontSize={{ base: 'md', md: 'lg' }} fontWeight="medium" color="gray.100">
-              Of all the tools we tried in this category, Aikido is the one that&#39;s best suited to the way teams work in web3.
-            </Text>
-            <Quotee
-              name="Sergio Azirav, Tools Lead @ BanklessDAO"
-              mt="2"
-            />
-          </Flex>
-        </Box>
-            </Box>
-        </Box>
-      </Box> */}
-
-
-
-      {/* How it Works */}
-      {/* <Box as="section" pb="20" px={{ base: '6', md: '8' }} >
-        <Box>
-          <Box maxW={{ base: 'xl', md: '5xl' }} mx="auto" px={{ base: '6', md: '8' }}>
-            {sectionHeadings('How it Works', 'On-chain work with custodied rewards, listed across any marketplace.', false)}
-          </Box>
-        </Box>
-
-        <Box maxW={{ base: 'md', md: '5xl' }} overflow="clip" mx="auto" mb="10" boxShadow="md" borderWidth="thin" rounded="3xl" >
-          <video src="/images/landing/protocol-animation.mp4" autoPlay muted playsInline poster="/images/landing/protocol-diagram.png"></video>
-        </Box>
-
-        <Box as="section">
-          <Box maxW={{ base: 'xl', md: '5xl' }} mx="auto" px={{ base: '6', md: '8' }}>
-            <Box >
-              <SimpleGrid columns={{ base: 2, md: 4 }} spacing={{ base: '1', sm: '2', md: '4' }}>
-                <Feature icon={<Box as={TbFreeRights} w="5" h="5" />} title="Free Forever">
-                  Built as a <a href="https://jacob.energy/hyperstructures.html">hyperstructure</a>, and will exist as long as Ethereum.
-                </Feature>
-                <Feature icon={<Box as={TiFlowMerge} w="6" h="6" />} title="Flexible">
-                  Useful for grants, hackathons, bounties, and much more.
-                </Feature>
-                <Feature icon={<Box as={BsLink} w="6" h="6" />} title="On-Chain">
-                  A true on-chain record of work as it happens.
-                </Feature>
-                <Feature icon={<Box as={FaCode} w="6" h="6" />} title="Open Source">
-                  The protocol and tools are open source.
-                </Feature>
-              </SimpleGrid>
-            </Box>
-          </Box>
-        </Box>
-        <Center mt={5}>
-          {LinkButton("https://docs.aikido.work", "Check the Docs to Learn More →",true)}
-        </Center>
-
-      </Box> */}
-
-      {/* Built on Aikido */}
-      {/* <Box as="section" mb="20">
-        <Box>
-          <Box maxW={{ base: 'xl', md: '5xl' }} mx="auto" px={{ base: '6', md: '8' }}>
-            {sectionHeadings('Built on Aikido.', 'Apps that use on-chain bounties and grants.', false)}
-          </Box>
-        </Box>
-
-        <Box>
-          <Box maxW={{ base: 'xl', md: '5xl' }} mx="auto" px={{ base: '6', md: '8' }}>
-            <SimpleGrid columns={{ base: 1, md: 1, lg: 3 }} spacing="14">
-
-              {carouselElement(
-                "/images/landing/workspace-screencap.png",
-                "Screenshot of Aikido App",
-                "Workspaces",
-                "Create a workspace to manage all your on-chain bounties, tied to a wallet or multisig.",
-                "https://aikido.work/dashboard")}
-
-              {carouselElement(
-                "/images/landing/bountywizard-screencap.png",
-                "Screenshot of Aikido App",
-                "Bounty.new",
-                "Create a standalone on-chain bounty to share with your community.",
-                "https://bounty.new")}
-
-
-              {carouselElement(
-                "/images/landing/docs-screencap.png",
-                "Product and Protocol Documentation",
-                "Product and Protocol Documentation →",
-                "Learn about how the protocol works, and product user guides.",
-                "https://docs.aikido.work")}
-            </SimpleGrid>
-          </Box>
-        </Box>
-      </Box> */}
 
       {/* Footer */}
       <Box as="footer" rounded="3xl" backgroundColor="gray.200" mb="20" mx={{ base: '5', md: '20' }} role="contentinfo" px={{ base: '16' }} py={{ base: '5', md: '5' }}>
@@ -519,63 +359,102 @@ export default function LandingPage({ url }: any): JSX.Element {
     </>
   );
 
-  function showcaseExample(imgSrc, alt, title, description, cta, href) {
-    return <LinkBox ><Stack
-      backgroundColor="white"
-      display="inline-block"
-      align="center"
-      boxShadow="base"
-      rounded="3xl"
-      minHeight="full"
-      width={{ base: 'xs', md: 'xs' }}
-      overflow="clip"
-    >
-      <Image
-        alt={alt}
-        src={imgSrc}
-        mb={2} />
-      <Box textAlign="left" p={3}>
-        <LinkOverlay href={href} target="_blank"><Heading as="h2" size="md" mb="2" letterSpacing="tight">{title}</Heading></LinkOverlay>
-        <Text mb={5}>{description}</Text>
-        {LinkButton(href, cta, true)}
-      </Box>
-    </Stack></LinkBox>;
-  }
-
-  function carouselElement(imgSrc, alt, heading, subheading, href) {
-    return <LinkBox><Stack
-      align="center"
-      transform="1"
-      transition="transform 0.2s ease"
-      zIndex="1 !important"
-      _hover={{
-        transform: "scale(1.05)",
-        transition: "transform 0.2s ease",
-        zIndex: "500 !important"
-      }}
-    >
-      <Box
-        className="group"
-        cursor="pointer"
-        position="relative"
-        rounded="2xl"
-        boxShadow="2xl"
-        borderColor="gray.300"
-        borderWidth="medium"
-        overflow="hidden"
-        width={{ base: 'xs', md: 'xs' }}
-      >
-        <Image
-          alt={alt}
-          src={imgSrc} />
-      </Box>
-      <Box textAlign="center">
-        <LinkOverlay href={href} target="_blank"><Heading as="h6" size="sm" mb="2">{heading}</Heading></LinkOverlay>
-        <Text>{subheading}</Text>
-      </Box>
-    </Stack></LinkBox>;
-  }
 }
+
+export const freeTier = (title, description, cta, href) => {
+  return <LinkBox ><Stack
+    backgroundColor="white"
+    display="inline-block"
+    align="center"
+    boxShadow="base"
+    rounded="3xl"
+    minHeight="full"
+    width={{ base: 'xs', md: 'xs' }}
+    overflow="clip"
+  >
+    <Box textAlign="center" p={5}>
+      <Heading as="h1" size="lg" mb="2" letterSpacing="tight">{title}</Heading>
+      <Heading as="h2" size="md" mb="2" color="purple.500" letterSpacing="tight">Free</Heading>
+      <Text mb={5}>{description}</Text>
+
+      <Button
+        onClick={href}
+        py={3}
+        colorScheme="purple"
+  fontWeight="bold"
+  size="md"
+  borderRadius="full">
+  {cta}
+</Button>
+    </Box>
+  </Stack></LinkBox>;
+}
+
+export const managedTier = (title, description, cta, href) => {
+  return <Stack
+    backgroundColor="white"
+    display="inline-block"
+    align="center"
+    boxShadow="base"
+    rounded="3xl"
+    minHeight="full"
+    width={{ base: 'xs', md: 'xs' }}
+    overflow="clip"
+  >
+    <Box textAlign="center" p={5}>
+      <Heading as="h1" size="lg" mb="2" letterSpacing="tight">{title}</Heading>
+      <Heading as="h2" size="md" mb="2" color="purple.500" letterSpacing="tight">$1000 / month</Heading>
+      <Text mb={1}>{description}</Text>
+      <Text mb={5} p={1} border="1px" borderColor="gray.400" backgroundColor="gray.100" rounded="2xl" fontSize="small"  fontWeight="bold">For companies and large communities</Text>
+
+      <List spacing={1} textAlign="left" mb={2}>
+        <ListItem>
+          <HStack>
+          <Icon as={FiCheck} color="green" boxSize="4" />
+          <Text lineHeight="shorter">Managed Spaces with dedicated Account owner</Text>
+          </HStack>
+        </ListItem>
+
+        <ListItem>
+          <Icon as={FiCheck} color="green" boxSize="4" />
+          24/7 Support
+        </ListItem>
+        
+        <ListItem>
+          <Icon as={FiCheck} color="green" boxSize="4" />
+          Contest Payment Advance (upto $500)
+        </ListItem>
+
+        <ListItem>
+          <Icon as={FiCheck} color="green" boxSize="4" />
+          Dispute Resolution
+        </ListItem>
+        
+        <ListItem>
+          <Icon as={FiCheck} color="green" boxSize="4" />
+          Contest & Grant Consulting
+        </ListItem>
+
+        <ListItem>
+          <Icon as={FiCheck} color="green" boxSize="4" />
+          Prioritized Features
+        </ListItem>  
+      </List>
+
+      <Button
+        onClick={href}
+        py={3}
+        colorScheme="purple"
+  fontWeight="bold"
+  size="md"
+  borderRadius="full">
+  {cta}
+</Button>
+    </Box>
+  </Stack>;
+}
+
+
 
 export const getServerSideProps = async (ctx) => {
   // get url from ctx.req.url
