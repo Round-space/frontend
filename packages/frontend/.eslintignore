@@ -1,0 +1,5 @@
+**/node_modules/*
+**/out/*
+**/.next/*
+test.tsx
+**/pages/_app.tsx
