@@ -12,7 +12,7 @@ This repository contains two main packages:
 
 ### Frontend
 
-The `frontend` package is a dynamic user interface for interacting with the Round platform. It's built using modern web technologies to provide a seamless experience.
+The `frontend` package is a dynamic user interface for interacting with the Round platform. Its built on a NextJS stack that's designed to work well with a Vercel deploymnet.
 
 #### Features:
 
@@ -24,11 +24,11 @@ The `frontend` package is a dynamic user interface for interacting with the Roun
 
 To start using the `frontend` package:
 
-\```bash
+
 cd frontend
 yarn install
 yarn dev
-\```
+
 
 This will start the development server for the frontend application.
 
@@ -56,11 +56,11 @@ The `hardhat` package is used for smart contract development, testing, and deplo
 
 To start using the `hardhat` package:
 
-\```bash
+
 cd hardhat
 yarn install
 yarn chain
-\```
+
 
 This will start a local Ethereum node for development.
 
